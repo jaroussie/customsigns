@@ -10,3 +10,5 @@ Fonts used are
 - https://fonts.google.com/specimen/Lato
 
 Inspired by https://github.com/williamhzo/astro-cube
+
+The Trackmania logo and name are trademarks of Ubisoft Entertainment in the U.S. and/or other countries. 
