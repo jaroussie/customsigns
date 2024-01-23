@@ -4,12 +4,12 @@
             font-weight: lighter;
             font-style: normal;
         }
-        /@font-face {
+/*        /@font-face {
             font-family: 'Serif Italic';
             src: url('assets/PlayfairDisplayItalic.ttf') format('opentype');
             font-weight: lighter;
             font-style: normal;
-        }
+        }*/
         @font-face {
             font-family: 'Sans Serif';
             src: url('assets/LatoWeb-Regular.ttf') format('opentype');
