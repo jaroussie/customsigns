@@ -1,4 +1,4 @@
 # Custom Signs
-A small website for custom signs in Trackmania.
+A barebones website for using custom signs in Trackmania.
 
 Inspired by https://github.com/williamhzo/astro-cube
