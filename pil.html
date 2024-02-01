@@ -1,1 +1,65 @@
-wip
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mud Masters Custom Signs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <a href="index.html"><img id="home-button" src="assets/return.svg" alt="Return to Home"></a>
+    <a href="https://www.trackmania.com/" target="_blank"><img id="tm-logo" src="assets/tm.png" alt="Trackmania Logo"></a>
+    <div class="container">
+        <h1>MUD MASTERS</h1>
+        <p>Click on an image to <em>copy its URL</em>, and paste it in <em>Trackmania</em>.</p>
+         <a href="#" onclick="copyToClipboard(event, 'image-link')">
+            <img src="" alt="Click to copy image link" id="image-link">
+        </a>
+        <div id="image-clicked-text">Image link copied!</div>
+    </div>
+    <script>
+        function copyToClipboard(event, elementId) {
+            event.preventDefault(); // Prevent default behavior
+
+            var element = document.getElementById(elementId);
+            var tempInput = document.createElement("input");
+            document.body.appendChild(tempInput);
+            tempInput.value = element.src;
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // Show the clicked text
+            var imageClickedText = document.getElementById('image-clicked-text');
+            imageClickedText.style.display = 'block';
+
+            // Get cursor coordinates
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // Set message position
+            imageClickedText.style.left = x + 'px';
+            imageClickedText.style.top = y + 'px';
+
+            // Hide the text after 2 seconds (adjust as needed)
+            setTimeout(function () {
+                imageClickedText.style.opacity = 0;
+            }, 2000);
+
+            // Reset opacity after the transition
+            setTimeout(function () {
+                imageClickedText.style.display = 'none';
+                imageClickedText.style.opacity = 1;
+            }, 3000);
+        }
+
+        // Page Progress Bar
+        window.onscroll = function () {
+            var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('progress-bar').style.height = Math.min(scrolled, 100) + '%';
+        };
+    </script>
+
+</body>
+</html>
